@@ -32,8 +32,8 @@ class Owner:
             raise Exception("Only Pet instances can be added.")
 
     def get_sorted_pets(self):
-        owner_pets = self.pets()
-        for pet in owner_pets:
-            if not isinstance(pet, Pet):
+        owner_pets = self.pets() # calls the pet methods to get all pet objects that belong to an owner
+        for pet in owner_pets: #Loops through all the owner's pets
+            if not isinstance(pet, Pet): #if pet is not among the Pet instances
                 raise Exception("Must be among the pet types")
-        return sorted(owner_pets, key=lambda p: p.name)
+        return sorted(owner_pets, key=lambda p: p.name) #return a new sorted list sorted alphabetically
